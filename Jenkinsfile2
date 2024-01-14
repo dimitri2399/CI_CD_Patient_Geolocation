@@ -24,6 +24,14 @@ pipeline {
                    "http://54.236.30.225:8081/artifactory/HealthCareApp/"'
            }
        }
+       stage('image build and push'){
+        steps {
+            sh 'docker tag geo-app:latest 007572960009.dkr.ecr.us-east-1.amazonaws.com/geo-app:latest'
+            sh 'docker build -t geo-app'
+            sh 'docker tag geo-app:latest 007572960009.dkr.ecr.us-east-1.amazonaws.com/geo-app:latest'
+            sh 'docker push 007572960009.dkr.ecr.us-east-1.amazonaws.com/geo-app:latest'
+        }
+       }
         
     }
 }
