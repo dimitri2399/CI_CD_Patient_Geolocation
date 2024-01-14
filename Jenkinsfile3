@@ -3,11 +3,12 @@ pipeline{
         label 'ansible'
     }
     stages{
-        stage('check the current dictory')
+        stage('check the current dictory'){
         steps{
             sh 'pwd'
             sh 'whoami'
             sh "mkdir \$(date '+%Y%m%d_%H%M%S')"
         }
-    }
+    }    
+}
 }
