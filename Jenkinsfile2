@@ -21,7 +21,7 @@ pipeline {
           steps{
                 sh 'curl -uadmin:AP7DYM4ou6knYX5jb6HUcZXHc3L -T \
                    target/bio*.jar \
-                   "http://54.236.30.225:8081/artifactory/HealthCareApp/"'
+                   "http://34.229.49.124:8081/artifactory/HealthCareApp/"'
            }
        }
        stage('image build and push'){
